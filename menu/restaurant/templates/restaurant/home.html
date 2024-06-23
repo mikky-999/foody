@@ -1,0 +1,40 @@
+{% extends "restaurant/base.html" %}
+{% load static %}
+{% block content %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+       <div class="carousel-item active">
+       <img src="{% static 'restaurant/img/coffee_cup_saucer_grains_foam_73571_1920x1080.jpg' %}" alt="Los angelos" height="680px" width="100%">
+        <div class="carousel-caption">
+          <h3>Portharcout</h3>
+          <p>Thank you, Portharcout!</p>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'restaurant/img/coffee_cup_saucer_grains_foam_73571_1920x1080.jpg' %}" alt="Chicago" height="680px" width="100%">
+        <div class="carousel-caption">
+          <h3>Abuja</h3>
+          <p>We had such a great time in Abuja!</p>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'restaurant/img/coffee_foam_beverage_cup_saucer_creative_continents_84944_1920x1080 (1).jpg' %}" alt="New York" height="680px" width="100%">
+        <div class="carousel-caption">
+          <h3>Lagos</h3>
+          <p>We love the Big Apple!</p>
+        </div>   
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+{% endblock content %}	

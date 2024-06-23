@@ -1,0 +1,26 @@
+{% extends "users/profile.html" %}
+{% block tab %}
+<div class="tab-pane fade show active" id="menu" role="tabpanel" aria-labelledby="menu-tab">
+    <div class="table-responsive" role="tabpanel">
+    <table class="table">
+        <tbody>
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.user.username }}</td>
+        <td>{{ order.timestamp }}</td>
+        <td>${{ order.total_price }}</td>
+        <td><ul>
+            {% for item in order.food_items.all %}
+                <li>{{ item.food_item.name }} - Quantity: {{ item.quantity }}</li>
+            {% endfor %}
+        </ul>
+    </td>
+    <td>{{ order.status }}</td>
+        
+    </tr>
+    {% endfor %}
+        </tbody>
+    </table>  
+    </div>  
+</div>
+{% endblock tab %}

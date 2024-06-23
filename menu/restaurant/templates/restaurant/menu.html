@@ -1,0 +1,40 @@
+{% extends "restaurant/base.html" %}
+{% block content %}
+<br><br><br>
+{% for food_item in food_items %}
+<div class="menu" style="margin: 20px;">
+  <div class="card">
+    <div class="content">
+      <div class="back">
+        <div class="back-content">
+        <img class="pic" src="{{ food_item.image.url }}" alt="{{ food_item.name }}">
+        <strong></strong>
+        </div>
+      </div>
+      <div class="front">
+        <div class="img"></div>   
+        <div class="front-content">
+        <small class="badge">{{ food_item.name }}</small>
+          <div class="description">
+            <div class="title">
+            <p class="title">
+              <strong>{{food_item.description}}</strong>
+            </p>
+            <form method="POST" action="{% url 'add_to_cart' food_item.id %}">
+            {% csrf_token %}
+            <button type="submit" style="background-color: transparent; border: none; cursor: pointer; padding: 0%;"><i class="fa fa-shopping-cart" style="color: lightblue;"></i></button>
+          </form>
+          </div>
+          <p class="card-footer">
+            30 Mins &nbsp; | &nbsp; 1 Serving
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+{% endblock content %}	
