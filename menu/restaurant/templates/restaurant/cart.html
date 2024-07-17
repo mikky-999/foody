@@ -7,12 +7,6 @@
 <div class="tab-content">
  <div class="table-responsive" role="tabpanel" id="viewitem">
    <table class="table">
-    <th>Image</th>
-    <th>Food name</th>
-    <th>Price</th>
-    <th>Description</th>
-    <th>Quantity</th>
-    <th>Remove food</th>
      <tbody>
         <!--for loop-->
         {% for item in items %}
@@ -22,14 +16,13 @@
          <td>{{item.food_item.price}}</td>
          <td>{{item.food_item.description}}</td>
          <td>{{item.quantity}}</td>
-         <td><form method="post" action="{% url 'remove_from_cart' item.food_item.id %}">
-          {% csrf_token %}
+         <td><form method="POST" action="">
           <button type="submit" class="btn btn-danger">Delete</button></td>
         </form>
        </tr>
        {% endfor %}
        <!--end for loop-->
-       
+       <form method="post" action="">
        <td>
          <h5 style="color:red;">Grand total</h5>
        </td>
@@ -40,11 +33,11 @@
        
        </td>
        <td></td>
-      
-       <td style="padding:30px; text-align:center;"> <form method="POST" action="{% url 'checkout' %}">
-        {% csrf_token %}
-       <button type="submit" style=" color:white; font-weight:bold; text-transform:uppercase;" class="btn btn-warning">Proceed to checkout</button>
-      </form></td>
+       
+       <td style="padding:30px; text-align:center;">
+       <a href="#"><button type="button" style=" color:white; font-weight:bold; text-transform:uppercase;" class="btn btn-warning">Proceed to checkout</button></a>
+       </td>
+      </form>
      </tbody>
    </table>
  </div>

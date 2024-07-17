@@ -12,40 +12,22 @@
 <body>
     <header class="site-header">
         {% if user.is_authenticated %}
-            {% if user.is_staff %}
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand" href="{% url 'restaurant-home' %}"><span style="color:green;font-family: 'Permanent Marker', cursive;">Food Hunt</span></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"> <a class="nav-link" href="{% url 'restaurant-home' %}">Home</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'menu' %}">Menu</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'staff-account' %}">Staff</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Contact</a> </li>
-                        <li class="nav-item"><a class="btn btn-success" name="login" href="{% url 'logout' %}" type="submit">Log Out</a>&nbsp;&nbsp;&nbsp;
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            {% else %}
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand" href="{% url 'restaurant-home' %}"><span style="color:green;font-family: 'Permanent Marker', cursive;">Food Hunt</span></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"> <a class="nav-link" href="{% url 'restaurant-home' %}">Home</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'menu' %}">Menu</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'profile-account' %}">Profile</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Contact</a> </li>
-                        <li class="nav-item"> <a href="{% url 'cart' %}"><span style="color:green;"><i class="fa fa-shopping-cart" aria-hidden="true"><span style="color:green;" id="cart"  class="badge badge-light">{{ cart_items_count }}</span></i></span></a>&nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-success" name="login" href="{% url 'logout' %}" type="submit">Log Out</a>&nbsp;&nbsp;&nbsp;
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            {% endif %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="{% url 'restaurant-home' %}"><span style="color:green;font-family: 'Permanent Marker', cursive;">Food Hunt</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"> <a class="nav-link" href="{% url 'restaurant-home' %}">Home</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'menu' %}">Menu</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'profile' %}">Profile</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Contact</a> </li>
+                    <li class="nav-item"> <a href="{% url 'cart' %}"><span style="color:green;"><i class="fa fa-shopping-cart" aria-hidden="true"><span style="color:green;" id="cart"  class="badge badge-light">{{ cart_items_count }}</span></i></span></a>&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-outline-danger" name="login" href="{% url 'logout' %}" type="submit">Log Out</a>&nbsp;&nbsp;&nbsp;
+                    </li>
+                </ul>
+            </div>
+        </nav>
         {% else %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a class="navbar-brand" href="{% url 'restaurant-home' %}"><span style="color:green;font-family: 'Permanent Marker', cursive;">Food Hunt</span></a>
